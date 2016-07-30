@@ -1,0 +1,28 @@
+{
+  "name": "mocha-chai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^2.2.0",
+    "gulp-util": "^3.0.7",
+    "sinon": "^1.17.3",
+    "grunt-mocha-test": "^0.12.7",
+    "grunt": "^1.0.1",
+    "uuid": "^2.0.2",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}
