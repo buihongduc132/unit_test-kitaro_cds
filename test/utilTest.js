@@ -4,17 +4,45 @@
 
 var chai = require('chai');
 var expect = chai.expect;
+var assert = chai.assert;
 
 chai.should();
 
-var util = require('../app/util.js');
+var Util = require('../app/util.js');
 
 describe('util features', function() {
-    describe('return1', function() {
-        it('should return 1', function() {
-            num = util().return1();
-            num.should.equal(1);
-        })        
+    var arr = [];
+
+    describe('sortArray', function() {
+        it('should return array', function() {
+            arr = [1,2,3];
+            var outArr = Util.sortArray(arr);
+            expect(outArr instanceof Array).be.true;
+        });
+
+        it('should return the same length as input', function() {
+            arr = [1,2,3,5];
+            var outArr = Util.sortArray(arr);
+            outArr.length.should.equal(4);
+        });
+
+        it('should return array with largest number at the begining', function() {
+            arr = [4,1,2,5];
+            var outArr = Util.sortArray(arr);
+            outArr[0].should.equal(5);
+        });
+
+        it('should return array with smallest number at last', function() {
+            arr = [4,1,3,2];
+            var outArr = Util.sortArray(arr);
+            outArr[outArr.length-1].should.equal(1);
+        })
+
+        it('should return array sorted from largest to smallest', function() {
+            arr = [4,3,5,6,2,7,2];
+            var outArr = Util.sortArray(arr);
+            expect(outArr).to.deep.equal([7,6,5,4,3,2,2]);
+        })
     })
 })
 
