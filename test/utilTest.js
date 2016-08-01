@@ -43,8 +43,25 @@ describe('util features', function() {
             var outArr = Util.sortArray(arr);
             expect(outArr).to.deep.equal([7,6,5,4,3,2,2]);
         })
+    });
+
+    describe('compare array', function() {
+        it('should return true with 2 same array', function() {
+            var arr1 = [1,2,3,4];
+            var arr2 = [1,2,3,4];
+            expect(Util.compareArr(arr1,arr2)).be.true;
+        });
+
+        it('should return false with 2 difference array', function() {
+            var arr1 = [1,2,4];
+            var arr2 = [1,2,3];
+            expect(Util.compareArr(arr1,arr2)).be.false;
+
+        })
     })
 })
+
+
 
 // function isEven(num) {
 //   return num % 2 === 0;
