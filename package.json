@@ -8,21 +8,25 @@
   },
   "dependencies": {
     "chai": "^3.5.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-mocha": "^2.2.0",
     "gulp-util": "^3.0.7",
     "sinon": "^1.17.3",
     "grunt-mocha-test": "^0.12.7",
     "grunt": "^1.0.1",
     "uuid": "^2.0.2",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt-contrib-watch": "^1.0.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "mocha": "^2.4.5"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "snyk": true
 }
